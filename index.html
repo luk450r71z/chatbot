@@ -164,7 +164,7 @@
           
           const res = await fetch(prodUrl, {
             method: 'POST', headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ phone : window.phone, message: 'mensaje inicial de conversacion', id_vacancy:id_vacancy })
+            body: JSON.stringify({ phone : window.phone, message: 'mensaje inicial de conversacion', id_vacancy:window.id_vacancy })
           });
           const data = await res.json();
           appendMessage('Bot', data.output, 'bot');
@@ -197,7 +197,7 @@
 
         const res = await fetch(prodUrl, {
           method: 'POST', headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({ phone: window.phone , message: userMessage, id_vacancy:id_vacancy })
+          body: JSON.stringify({ phone: window.phone , message: userMessage, id_vacancy:window.id_vacancy })
         });
         const data = await res.json();
         appendMessage('Bot', data.output, 'bot');
